@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18 # Specify the required Node.js version
+    commands:
+      - echo Installing dependencies...
+      - npm install
+  build:
+    commands:
+      - echo Building the Angular application...
+      - npm run build
+artifacts:
+  files:
+    - '**/*'
+  base-directory: dist/testbuildspec # Replace with your Angular app name
