@@ -2,11 +2,11 @@ version: 0.0
 os: linux
 files:
   - source: /test/browser
-    destination: /usr/share/nginx/html/
+    destination: /opt/pfa
 
 hooks:
   BeforeInstall:
-    - location: scripts/remove_old_file.sh
+    - location: scripts/backup.sh
       timeout: 180
       runas: root
 
