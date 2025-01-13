@@ -15,7 +15,8 @@ phases:
       - ng build
       - echo Copying necessary files to the dist directory...
       - cp appspec.yml dist/              # Copy the appspec.yml to dist/
-      - cp -r scripts dist/scripts        # Copy the entire scripts folder to dist/
+      - mkdir -p dist/scripts             # Create the scripts folder in dist/
+      - cp -r scripts/* dist/scripts/     # Copy the contents of the scripts folder to dist/scripts/
 
 artifacts:
   files:
