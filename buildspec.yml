@@ -14,7 +14,7 @@ phases:
       - echo Build started on `date`
       - ng build
       - cp appspec.yml dist/  # Copy appspec.yml to dist directory
-      - cp -r scripts dist/   # Copy the entire scripts folder to dist directory
+      - cp -r scripts dist/scripts/   # Copy the entire scripts folder to dist directory
       
 artifacts:
   files:
