@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /dist/test/browser
+  - source: /test/browser
     destination: /usr/share/nginx/html/
 hooks:
   AfterInstall:
