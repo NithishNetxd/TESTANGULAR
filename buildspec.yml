@@ -1,16 +1,23 @@
 version: 0.2
+
 phases:
-    install:
-        commands:
-            - echo Installing source NPM dependencies...
-            - npm install
-            - npm install -g @angular/cli
-    build:
-        commands:
-            - echo Build started on `date`
-            - ng build
+  install:
+    runtime-versions:
+      nodejs: 18 # Specify your Node.js version if needed
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm ci
+      - npm install -g @angular/cli
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - ng build
+      
 artifacts:
-    files:
-        - '**/*'
-    base-directory: 'dist*'
-    discard-paths: yes
+  files:
+    - '**/*'
+    - scripts/**/*
+    - appspec.yml
+  base-directory: 'dist/'
+  discard-paths: yes
