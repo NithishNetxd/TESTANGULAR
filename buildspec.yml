@@ -1,16 +1,18 @@
 version: 0.2
+
 phases:
   install:
     runtime-versions:
-      nodejs: 18
+      nodejs: 16
     commands:
       - npm install -g @angular/cli
   pre_build:
     commands:
-      - npm install -f
+      - npm install -F
   build:
     commands:
       - ng build
 artifacts:
   files:
-    - dist/test/server/**
+    - '**/*'
+  base-directory: dist/test/server
