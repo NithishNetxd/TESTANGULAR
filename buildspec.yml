@@ -22,4 +22,4 @@ artifacts:
   files:
     - '**/*'                  # Include all files in the dist directory
   base-directory: 'dist/'     # Set dist as the base directory for deployment
-  discard-paths: no           # Preserve directory structure
+  discard-paths: no           
