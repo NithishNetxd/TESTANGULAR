@@ -4,6 +4,9 @@ files:
   - source: /test/browser
     destination: /usr/share/nginx/html/
 hooks:
+BeforeInstall:
+    - location: scripts/remove_old_file.sh
+      timeout: 180
   AfterInstall:
     - location: scripts/restart-server.sh
       timeout: 300
