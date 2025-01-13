@@ -13,13 +13,12 @@ phases:
     commands:
       - echo Build started on `date`
       - ng build
-      - cp appspec.yml dist/  # Copy appspec.yml to dist directory
-      - cp -r scripts dist/scripts/   # Copy the entire scripts folder to dist directory
-      
+      - echo Copying necessary files to the dist directory...
+      - cp appspec.yml dist/              # Copy the appspec.yml to dist/
+      - cp -r scripts dist/scripts        # Copy the entire scripts folder to dist/
+
 artifacts:
   files:
-    - '**/*'             # Include all files in the dist directory
-    - scripts/**/*       # Ensure the scripts folder and its contents are included
-    - appspec.yml         # appspec.yml must be in dist before packaging
-  base-directory: 'dist/' # Set dist as the base directory for deployment
-  discard-paths: yes      # Flatten the directory structure
+    - '**/*'                  # Include all files in the dist directory
+  base-directory: 'dist/'     # Set dist as the base directory for deployment
+  discard-paths: no           # Preserve directory structure
