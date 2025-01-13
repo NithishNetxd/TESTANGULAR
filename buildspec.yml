@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 18 # Specify your Node.js version if needed
+      nodejs: 18
     commands:
       - echo Installing source NPM dependencies...
       - npm ci
@@ -13,11 +13,12 @@ phases:
     commands:
       - echo Build started on `date`
       - ng build
+      - cp appspec.yml dist/  # Copy appspec.yml to dist folder
       
 artifacts:
   files:
     - '**/*'
     - scripts/**/*
-    - appspec.yml
+    - appspec.yml  # Ensure this is in dist/ before packaging
   base-directory: 'dist/'
   discard-paths: yes
