@@ -3,10 +3,13 @@ os: linux
 files:
   - source: /test/browser
     destination: /usr/share/nginx/html/
+
 hooks:
-BeforeInstall:
+  BeforeInstall:
     - location: scripts/remove_old_file.sh
       timeout: 180
+      runas: root
+
   AfterInstall:
     - location: scripts/restart-server.sh
       timeout: 300
