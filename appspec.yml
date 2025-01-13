@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /dist/test/server
-    destination: /usr/share/nginx/html/
+    destination: /home/ec2-user/
 hooks:
   AfterInstall:
     - location: scripts/restart-server.sh
